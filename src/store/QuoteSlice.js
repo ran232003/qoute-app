@@ -6,6 +6,9 @@ const quoteSlice = createSlice({
     reducers:{
         addQuote(state,action){
             state.quotes.push(action.payload)
+        },
+        checkQuote(state,action){
+            
         }
     }
 })

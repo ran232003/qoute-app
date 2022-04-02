@@ -17,7 +17,7 @@ return(
     <Nav>
         
       <Nav.Link as = {Link} to="/add"> Add Quote</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
+      <Nav.Link as = {Link} to="/quotes">
         All Quotes
       </Nav.Link>
     </Nav>

@@ -45,8 +45,11 @@ const AddQuote = ()=>{
 
     const submitInput = (event)=>{
         event.preventDefault();
+
         if(inputs.validName && inputs.validQuote){
-            const obj = {name:inputs.name,quote:inputs.quote};
+            const id = Math.random();
+            const obj = {name:inputs.name,quote:inputs.quote,id:id};
+            dispatch(quoteActions.checkQuote(obj))
             dispatch(quoteActions.addQuote(obj))
         }
     

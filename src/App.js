@@ -6,6 +6,7 @@ import NavigationBar from './components/NavigationBar';
 import AddQuote from './pages/AddQuote';
 import { Provider } from 'react-redux';
 import store from './store';
+import AllQuotes from './pages/AllQuotes';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       <NavigationBar/>
       <Routes>
       <Route path = "/add" element = {<AddQuote/>}>
+
+      </Route>
+      <Route exact  path = "/quotes" element = {<AllQuotes/>}>
 
       </Route>
 
