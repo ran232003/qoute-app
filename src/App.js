@@ -7,6 +7,7 @@ import AddQuote from './pages/AddQuote';
 import { Provider } from 'react-redux';
 import store from './store';
 import AllQuotes from './pages/AllQuotes';
+import QuotePage from './pages/QuotePage';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
 
       </Route>
       <Route exact  path = "/quotes" element = {<AllQuotes/>}>
+
+      </Route>
+      <Route exact  path = "/quotes/qute-page/:id" element = {<QuotePage/>}>
 
       </Route>
 

@@ -8,5 +8,20 @@
     border-radius: 6px;
     background: white;
     margin-top: 70px;
+    border-style: solid;
+border-color: green;
     
   }
+.myName{
+border-style: solid;
+border-color: green;
+font-family: 'Delius Swash Caps', cursive;
+width: fit-content;
+margin-left: auto; 
+margin-right: 0;
+}
+.myQuote{
+  border-style: solid;
+  border-color: green;
+  font-family: 'Delius Swash Caps', cursive;
+}
