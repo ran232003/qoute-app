@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { addQuteApi } from "../api/Api";
 import { quoteActions } from "../store/QuoteSlice";
 import "./AddQuote.css"
 const AddQuote = ()=>{
@@ -71,16 +72,17 @@ const AddQuote = ()=>{
         })
     }
 
-    const submitInput = (event)=>{
+    const submitInput =async (event)=>{
         event.preventDefault();
 
         if(inputs.validName && inputs.validQuote){
-            const id = Math.random();
+            const id = Math.random().toString(36).slice(2);
             const obj = {name:inputs.name,quote:inputs.quote,id:id};
             dispatch(quoteActions.checkQuote(obj))
             dispatch(quoteActions.addQuote(obj))
+            await addQuteApi(obj);
         }
-    
+        
 
     }
 

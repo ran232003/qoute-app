@@ -22,7 +22,8 @@ const test = async ()=>{
     })
    await test.save();
 }
-
+var cors = require('cors') 
+app.use(cors())
 app.use("/api/quote",quoteRouter);
 
 app.use(function(error,req,res,next){
