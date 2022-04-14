@@ -7,4 +7,7 @@ export const addQuteApi =async (obj)=>{
         },
         body: JSON.stringify(obj)
     })
+    const data = await res.json();
+    console.log(data);
+    return data;
 }

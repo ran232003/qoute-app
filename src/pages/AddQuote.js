@@ -77,10 +77,20 @@ const AddQuote = ()=>{
 
         if(inputs.validName && inputs.validQuote){
             const id = Math.random().toString(36).slice(2);
-            const obj = {name:inputs.name,quote:inputs.quote,id:id};
-            dispatch(quoteActions.checkQuote(obj))
-            dispatch(quoteActions.addQuote(obj))
-            await addQuteApi(obj);
+            let obj = {name:inputs.name,quote:inputs.quote};
+            const data =  await addQuteApi(obj);
+            console.log(data,"in add");
+            if(data.msg === "ok"){
+                obj.id = data.id;
+                dispatch(quoteActions.checkQuote(obj))
+                dispatch(quoteActions.addQuote(obj))
+            }
+            else if(data.msg === "the quote is already in the system"){
+                console.log(data);
+
+            }
+            
+           
         }
         
 
@@ -99,6 +109,7 @@ const AddQuote = ()=>{
             return {...error,nameInput:!inputs.validName,countQuote:1}
         })
     }
+    console.log(quote)
     return (
         <div className="quote-form">
         <Form>

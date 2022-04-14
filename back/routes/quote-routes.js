@@ -6,8 +6,7 @@ const router = express.Router();
 
 router.post("/addQuote",
 [check("quote","my message").exists().isLength({ min: 2 })
-,check("name").exists().isLength({ min: 2 }),
-check("id").exists().isLength({ min: 6 })]
+,check("name").exists().isLength({ min: 2 })]
 ,addQuote);
 
 module.exports = router
