@@ -4,14 +4,22 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import './App.css';
 import NavigationBar from './components/NavigationBar';
 import AddQuote from './pages/AddQuote';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import store from './store';
 import AllQuotes from './pages/AllQuotes';
 import QuotePage from './pages/QuotePage';
+import { getQuotes } from './api/Api';
+import { quoteActions } from './store/QuoteSlice';
 
 function App() {
+  const dispatch = useDispatch();
+  const fetchQuotes =async ()=>{
+   const quotes = await getQuotes();
+   dispatch(quoteActions.dbQuotes(quotes))
+  } 
+  fetchQuotes();
   return (
-  <Provider store={store}>
+  
     <div>
       <NavigationBar/>
       <Routes>
@@ -27,7 +35,6 @@ function App() {
 
       </Routes>
     </div>
-    </Provider>
   );
 }
 
