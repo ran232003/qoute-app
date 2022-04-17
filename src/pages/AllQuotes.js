@@ -8,7 +8,7 @@ const AllQuotes =() => {
     console.log(quote.quotes)
     return ( 
     <div>
-        <h1>hello</h1>
+        
         <QuoteList
         quotes = {quote.quotes}
         />

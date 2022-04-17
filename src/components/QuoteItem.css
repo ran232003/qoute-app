@@ -8,20 +8,52 @@
     border-radius: 6px;
     background: white;
     margin-top: 70px;
-    border-style: solid;
-border-color: green;
+
     
   }
 .myName{
-border-style: solid;
-border-color: green;
+
 font-family: 'Delius Swash Caps', cursive;
-width: fit-content;
+
+margin-left: auto; 
 margin-left: auto; 
 margin-right: 0;
+
+
+
+
 }
 .myQuote{
-  border-style: solid;
-  border-color: green;
+  border-bottom: dashed;
+  border-color: #66cc99;
   font-family: 'Delius Swash Caps', cursive;
+}
+.test{
+  width: 100%;
+  
+ 
+  display: flex;
+ flex-direction:row-reverse;
+ 
+}
+.test2{
+ 
+
+  
+ 
+}
+.ratings{
+  
+  }
+.ratings2{
+
+}
+.stars{
+
+ 
+ 
+}
+.rate{
+
+ 
 }
