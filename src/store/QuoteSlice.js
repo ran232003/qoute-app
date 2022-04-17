@@ -9,6 +9,9 @@ const quoteSlice = createSlice({
         },
         checkQuote(state,action){
             
+        },
+        dbQuotes(state,action){
+            state.quotes = action.payload;
         }
     }
 })

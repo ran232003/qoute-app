@@ -30,8 +30,16 @@ const addQuote = async (req,res,next)=>{
     return res.json({msg:"ok",id:id})
 }
 
+const getQuotes = async(req,res,next)=>{
+    const quotes = await Quote.find();
+    console.log(quotes);
+    res.json({msg:"ok",quotes:quotes})
+
+}
+
 
 
 module.exports = {
-    addQuote:addQuote
+    addQuote:addQuote,
+    getQuotes:getQuotes
 }
