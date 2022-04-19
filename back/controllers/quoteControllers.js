@@ -8,11 +8,11 @@ app.use(bodyParser.json());
 const addQuote = async (req,res,next)=>{
     console.log("start");
     console.log(req.body)
-    const {name,quote} = req.body;
+    const {name,quote,count} = req.body;
     const errors = validationResult(req);
     if(!errors.isEmpty()){
        
-        console.log("error")
+        console.log("error",errors)
         return res.json({msg:"error"})
     }
    const allQuotes = await Quote.findOne({quote:quote});

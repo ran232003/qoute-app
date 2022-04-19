@@ -12,6 +12,23 @@ const quoteSlice = createSlice({
         },
         dbQuotes(state,action){
             state.quotes = action.payload;
+        },
+        addRating(state,action){
+            let id = action.payload.id;
+            let quote = state.quotes.find((obj)=>{
+                if(obj.id = id){
+                    obj.myRating = action.payload.rating;
+                    obj.count =  obj.count + 1;
+                    obj.totalRating = obj.totalRating + quote.myRating 
+                    obj.avrageRating = obj.totalRating / quote.count
+                }
+
+            })
+            // quote.myRating = action.payload.rating;
+            // quote.count =  quote.count + 1;
+            // quote.totalRating = quote.totalRating + quote.myRating 
+            // quote.avrageRating = quote.totalRating/ quote.count
+
         }
     }
 })

@@ -77,7 +77,7 @@ const AddQuote = ()=>{
 
         if(inputs.validName && inputs.validQuote){
             const id = Math.random().toString(36).slice(2);
-            let obj = {name:inputs.name,quote:inputs.quote};
+            let obj = {name:inputs.name,quote:inputs.quote,count:0,totalRating:0,myRating:0};
             const data =  await addQuteApi(obj);
             console.log(data,"in add");
             if(data.msg === "ok"){

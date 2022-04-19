@@ -8,7 +8,7 @@ const QuoteItem = (props)=>{
         
     }
     return(
-        <Link to={`qute-page/${id}`} style={{ textDecoration: 'none',color:'black' }}>
+       
         <div className= 'quote'>
             <div className = "myQuote">
             <p>"{quote}"</p>
@@ -42,7 +42,7 @@ const QuoteItem = (props)=>{
             </div>
           
         </div>
-        </Link>
+       
     )
 }
 export default QuoteItem;
