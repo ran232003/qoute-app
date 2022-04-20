@@ -3,8 +3,10 @@ import { Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { addQuteApi } from "../api/Api";
 import { quoteActions } from "../store/QuoteSlice";
+import { useNavigate } from 'react-router-dom';
 import "./AddQuote.css"
 const AddQuote = ()=>{
+    const navigate = useNavigate();
     const [error,setError] = useState({
         nameInput:false,
         quoteInput:false,
@@ -84,6 +86,8 @@ const AddQuote = ()=>{
                 obj.id = data.id;
                 dispatch(quoteActions.checkQuote(obj))
                 dispatch(quoteActions.addQuote(obj))
+                navigate("/quotes")
+
             }
             else if(data.msg === "the quote is already in the system"){
                 console.log(data);

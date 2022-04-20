@@ -26,3 +26,16 @@ export const getQuotes =async ()=>{
     }
 
 }
+
+export const changeRating = async(rating)=>{
+
+    const res = await fetch("http://localhost:5000/api/quote/submitRating",{
+        method:"POST",
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({rating:rating})
+    })
+    const data = await res.json();
+    console.log(data);
+}

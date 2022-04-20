@@ -4,7 +4,8 @@ import "./QuoteItem.css";
 import ReactStars from 'react-stars'
 const QuoteItem = (props)=>{
     const {id,name,quote} = props;
-    const ratingChanged = ()=>{
+    const ratingChanged = (newRating)=>{
+        console.log("rating",newRating);
         
     }
     return(

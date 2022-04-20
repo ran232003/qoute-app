@@ -36,10 +36,22 @@ const getQuotes = async(req,res,next)=>{
     res.json({msg:"ok",quotes:quotes})
 
 }
-
+const submitRating = (req,res,next)=>{
+    console.log("start");
+    console.log(req.body)
+    const {rating} = req.body;
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+       
+        console.log("error",errors)
+        return res.json({msg:"error"})
+    }
+    return res.json({msg:"ok"})
+}
 
 
 module.exports = {
     addQuote:addQuote,
-    getQuotes:getQuotes
+    getQuotes:getQuotes,
+    submitRating:submitRating
 }
