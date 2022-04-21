@@ -8,9 +8,11 @@ const QuoteList = (props)=>{
     <div>
         <ul>
         {quotes.map((item)=>{
+            console.log(item._id)
             return(
                 <QuoteItem
-                id = {item.id}
+                key = {item._id}
+                id = {item._id}
                 name = {item.name}
                 quote = {item.quote}
                 />

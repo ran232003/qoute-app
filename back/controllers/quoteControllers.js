@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 const addQuote = async (req,res,next)=>{
     console.log("start");
     console.log(req.body)
-    const {name,quote,count} = req.body;
+    const {name,quote,count,totalRating} = req.body;
     const errors = validationResult(req);
     if(!errors.isEmpty()){
        
@@ -22,7 +22,9 @@ const addQuote = async (req,res,next)=>{
    }
    const newQuote = new Quote({
        name:name,
-       quote:quote
+       quote:quote,
+       totalRating:totalRating,
+       count:count
    })
    await newQuote.save();
    const id = newQuote._id.valueOf();
@@ -39,7 +41,7 @@ const getQuotes = async(req,res,next)=>{
 const submitRating = (req,res,next)=>{
     console.log("start");
     console.log(req.body)
-    const {rating} = req.body;
+    const {rating,userID,id} = req.body;
     const errors = validationResult(req);
     if(!errors.isEmpty()){
        

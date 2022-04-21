@@ -2,10 +2,20 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import "./QuoteItem.css";
 import ReactStars from 'react-stars'
-const QuoteItem = (props)=>{
+import { changeRating } from '../api/Api';
+import { quoteActions } from '../store/QuoteSlice';
+import { useDispatch } from 'react-redux';
+const QuoteItem =  (props)=>{
+    const dispatch = useDispatch();
     const {id,name,quote} = props;
-    const ratingChanged = (newRating)=>{
+    const ratingChanged = async(newRating)=>{
         console.log("rating",newRating);
+       const response = await changeRating(newRating,id)
+       console.log(response);
+       if(response.msg === "ok"){
+           const obj = {id:id,rating:newRating}
+            dispatch(quoteActions.addRating(obj))
+       }
         
     }
     return(

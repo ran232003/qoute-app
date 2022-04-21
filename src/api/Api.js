@@ -27,15 +27,16 @@ export const getQuotes =async ()=>{
 
 }
 
-export const changeRating = async(rating)=>{
+export const changeRating = async(rating,id)=>{
 
     const res = await fetch("http://localhost:5000/api/quote/submitRating",{
         method:"POST",
         headers:{
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({rating:rating})
+        body: JSON.stringify({rating:rating,id:id,userID:"ranfa"})
     })
     const data = await res.json();
     console.log(data);
+    return data;
 }

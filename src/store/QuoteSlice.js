@@ -16,11 +16,11 @@ const quoteSlice = createSlice({
         addRating(state,action){
             let id = action.payload.id;
             let quote = state.quotes.find((obj)=>{
-                if(obj.id = id){
+                if(obj._id = id){
                     obj.myRating = action.payload.rating;
                     obj.count =  obj.count + 1;
-                    obj.totalRating = obj.totalRating + quote.myRating 
-                    obj.avrageRating = obj.totalRating / quote.count
+                    obj.totalRating = obj.totalRating + obj.myRating 
+                    obj.avrageRating = obj.totalRating / obj.count
                 }
 
             })
